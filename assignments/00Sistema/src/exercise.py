@@ -2,21 +2,24 @@ import os
 def main():
     #escribe tu código abajo de esta línea
     os.system("clear")
-    angulo = int(input("Dame el ángulo en grados: "))
-    if angulo > 360:
-        print("Error, el ángulo debe estar entre 0 y 360 grados")
-    elif angulo > 180:
-        print("Cóncavo")
-    elif angulo == 180:
-        print("Llano")
-    elif angulo > 90:
-        print("Obtuso")
-    elif angulo == 90:
-        print("Recto")
-    elif angulo >= 0:
-        print("Agudo")
+    a = float(input("Dame el valor de a: "))
+    b = float(input("Dame el valor de b: "))
+    c = float(input("Dame el valor de c: "))
+    
+    d = float(input("Dame el valor de d: "))
+    e = float(input("Dame el valor de e: "))
+    f = float(input("Dame el valor de f: "))
+    
+    determinante = a*e - b*d
+
+    if determinante == 0:
+        print("El sistema no tiene solución.")
     else:
-        print("Error, el ángulo debe estar entre 0 y 360 grados")
+        x = (c*e - b*f)/determinante
+        y = (a*f - c*d)/determinante
+        print("La solución al sistema de ecuaciones es:")
+        print(f"x={x}")
+        print(f"y={y}")
     
 if __name__=='__main__':
     main()
